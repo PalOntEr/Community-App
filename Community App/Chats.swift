@@ -39,9 +39,11 @@ struct Chats: View {
                                 .foregroundColor(.white)
                         }
                         VStack(alignment: .leading, spacing: 4) {
-                            Text("Angel")
-                                .font(.system(size: 21, weight: .heavy))
-                                .foregroundColor(Color(red: 0.09, green: 0.10, blue: 0.12))
+                            NavigationLink(destination: ChatView()) {
+                                Text("Angel")
+                                    .font(.system(size: 21, weight: .heavy))
+                                    .foregroundColor(Color(red: 0.09, green: 0.10, blue: 0.12))
+                            }
                             Text("Ya lo compré.")
                                 .font(.system(size: 15, weight: .medium))
                                 .foregroundColor(Color(red: 0.28, green: 0.29, blue: 0.34))
@@ -62,6 +64,8 @@ struct Chats: View {
                         }
                     }
                     .padding()
+                    
+                    Spacer()
                 }
                 .background(.white)
                 .padding(.top)
@@ -83,7 +87,6 @@ struct Chats: View {
             .background(.white)
         }
         .navigationTitle("Chats")
-        .navigationBarBackButtonHidden(true)
     }
 }
 

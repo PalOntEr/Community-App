@@ -63,14 +63,21 @@ struct Home: View {
                 VStack {
                     HStack(spacing: 16) {
                         BottomBarItem(iconName: "house", text: "Home", isActive: true)
-                        BottomBarItem(iconName: "map", text: "Mapa")
-                        BottomBarItem(iconName: "plus.app", text: "Crear")
-                        BottomBarItem(iconName: "message", text: "Chat", badgeCount: 1)
+                        NavigationLink(destination: PlacesListView()) {
+                            BottomBarItem(iconName: "map", text: "Mapa")
+                        }
+                        NavigationLink(destination: CreateCourseView()) {
+                            BottomBarItem(iconName: "plus.app", text: "Crear")
+                        }
+                        NavigationLink(destination: Chats()) {
+                            BottomBarItem(iconName: "message", text: "Chat", badgeCount: 1)
+                        }
                     }
                     .padding(.top)
                     .background(.white)
                 }
                 .frame(maxWidth: .infinity)
+                .padding(.top, -100)
             }
         }
         .navigationTitle("Home")

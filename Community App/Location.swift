@@ -29,10 +29,13 @@ struct PlacesListView: View {
                         PlaceView(place: place)
                         HStack {
                             Spacer()
-                            Text("Go")
-                                .font(.system(size: 24, weight: .heavy))
-                                .foregroundColor(Color(red: 0.09, green: 0.10, blue: 0.12))
-                                .padding(.leading)
+                            NavigationLink(destination: LocationDetailsView()) {
+                                
+                                Text("Go")
+                                    .font(.system(size: 24, weight: .heavy))
+                                    .foregroundColor(Color(red: 0.09, green: 0.10, blue: 0.12))
+                                    .padding(.leading)
+                            }
                         }
                         .padding(.horizontal)
                     }
